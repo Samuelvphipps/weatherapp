@@ -13,11 +13,7 @@ function* fetchWeather(action){
     // console.log('in fetchWeather saga');
     try{
 
-        const response = yield axios.get('/api/weather',{
-            params: {
-                location: action.payload
-            }
-        });
+        const response = yield axios.get(`/api/weather/${action.payload}`);
 
     } catch (err) {
         console.error('in fetchWeather saga error', err);
