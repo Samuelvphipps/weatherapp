@@ -7,7 +7,7 @@ const app = express();
 
 
 // Route includes
-
+const weatherRouter = require('./routes/weather.router');
 
 
 // Body parser middleware
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 /* Routes */
-
+app.use('/api/weather', weatherRouter);
 
 // Serve static files
 app.use(express.static('build'));
@@ -31,5 +31,5 @@ const PORT = process.env.PORT || 5000;
 
 /** Listen * */
 app.listen(PORT, () => {
-  //console.log(`Listening on port: ${PORT}`);
+  console.log(`Listening on port: ${PORT}`);
 });
