@@ -25,7 +25,7 @@ function WeatherPage() {
         evt.preventDefault();
         dispatch({
             type: 'FETCH_WEATHER',
-            payload: location.toLowerCase
+            payload: location.toLowerCase()
         })
     }
     console.log(location);
